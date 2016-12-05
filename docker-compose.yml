@@ -1,7 +1,7 @@
 version: "2"
 services:
   web:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
     command: api/bin/web
@@ -14,7 +14,6 @@ services:
       - CLIENT_ID=dev@convox.com
       - CLUSTER
       - CUSTOM_TOPIC
-      - DEBUG=false
       - DOCKER_IMAGE_API=rack/web
       - DYNAMO_BUILDS
       - DYNAMO_RELEASES
@@ -45,7 +44,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
   monitor:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
     command: api/bin/monitor
@@ -58,7 +57,6 @@ services:
       - CLIENT_ID=dev@convox.com
       - CLUSTER
       - CUSTOM_TOPIC
-      - DEBUG=false
       - DOCKER_IMAGE_API=rack/web
       - DYNAMO_BUILDS
       - DYNAMO_RELEASES
